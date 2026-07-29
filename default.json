@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":disableDependencyDashboard"
+  ],
+  "timezone": "Europe/Paris",
+  "schedule": [
+    "every 2 weeks on the first day of the week"
+  ],
+  "packageRules": [
+    {
+      "groupName": "Pre-commit Updates",
+      "matchManagers": [
+        "pre-commit"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    }
+  ],
+  "pre-commit": {
+    "enabled": true
+  }
+}
